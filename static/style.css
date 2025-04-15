@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Vibur&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Vibur&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav {
+    background-color: #000;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 1vh 1vw 1vh 1vw;
+}
+
+.searchBarDiv {
+    color: #b3b3b3;
+    background-color: #1f1f1f;
+    display: flex;
+    align-items: center;
+    padding: 0.5vw;
+    border-radius: 20vw;
+    margin-left: 2vw;
+}
+
+.searchBarInput {
+    border: none;
+    color: #b3b3b3;
+    background-color: #1f1f1f;
+    outline: none;
+    font-family: "Nunito";
+    font-size: 25px;
+    padding-left: 1vw;
+}
+.searchBarInput::placeholder {
+    color: #b3b3b3;
+}
+.search-icon{
+    font-size: 1.3vw;
+    padding-left: 1.2vw;
+}
+.iconBtnHome{
+    font-size: 1vw;
+    color: #b3b3b3;
+}
+.btnHome{
+    border: none;
+    background-color: #1f1f1f;
+}
+.divBtnsNavBar{
+    display: flex;
+    align-items: center;
+}
+.divBtnHome{
+    background-color: #1f1f1f;
+    border-radius: 100%;
+    padding: 1vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
