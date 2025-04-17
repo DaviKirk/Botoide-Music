@@ -2,13 +2,28 @@
 
 {% block content %}
 <main>
-    <form action="{{url_for('addsong')}}" class="form-control" method="POST">
-        <label>URL:</label>
-        <input type="text" name="url" class="form-control" required>
-        <label>name:</label>
-        <input type="text" name="name" class="form-control" required>
-        <input type="submit" value="Cadastrar" class="btn btn-success">
-    </form>
+    <aside>
+        <form action="{{url_for('addsong')}}" class="form-control" method="POST">
+            <label>URL:</label>
+            <input type="text" name="url" class="form-control" required>
+            <label>name:</label>
+            <input type="text" name="name" class="form-control" required>
+            <input type="submit" value="Cadastrar" class="btn btn-success">
+        </form>
+    </aside>
+    <section>
+      <div class="bgHeader">
+        <div class="bgIcon">
+            <i class="fa-solid fa-music"></i>
+        </div>
+        <div>
+            <h1>Minhas Músicas</h1>
+        </div>
+      </div>
+      <div class="listContainer">
+        
+      </div>
+    </section>
 </main>
 
 {% endblock content %}

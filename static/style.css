@@ -1,11 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Vibur&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Vibur&display=swap');
 
+* {
+    font-family: "Nunito";
+    color: #fff;
+}
+
+html,
 body {
     margin: 0;
     padding: 0;
-    height: auto;
-    width: auto;
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: #000000;
 }
 
 nav {
@@ -15,6 +26,31 @@ nav {
     justify-content: space-between;
     padding: 1vh 0vw 1vh 0vw;
     /* position: fixed; */
+}
+
+main {
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    /* height: 100%; */
+    flex: 1 1 auto;
+    overflow-y: auto;
+    background-color: #000000;
+    border-radius: 20px;
+}
+
+aside {
+    background-color: #121212;
+    margin-right: 0.4vw;
+    height: 100%;
+    width: 20%;
+    border-radius: 20px;
+}
+
+section {
+    background: linear-gradient(to bottom, #8a399e, #2d2056);
+    flex: 1 1 auto;
+    border-radius: 20px;
 }
 
 .searchBarDiv {
@@ -36,22 +72,27 @@ nav {
     font-size: 25px;
     padding-left: 1vw;
 }
+
 .searchBarInput::placeholder {
     color: #b3b3b3;
 }
-.search-icon{
+
+.search-icon {
     font-size: 1.3vw;
     padding-left: 1.2vw;
 }
-.iconBtnHome{
+
+.iconBtnHome {
     font-size: 1vw;
     color: #b3b3b3;
 }
-.divBtnsNavBar{
+
+.divBtnsNavBar {
     display: flex;
     align-items: center;
 }
-.divBtnHome{
+
+.divBtnHome {
     background-color: #1f1f1f;
     border-radius: 100%;
     padding: 1vw;
@@ -60,59 +101,92 @@ nav {
     justify-content: center;
     text-align: center;
 }
-.divBtnHome:hover{
+
+.divBtnHome:hover {
     background-color: #4b4a4a;
 }
-footer{
+
+footer {
     background-color: #000;
     color: #fff;
     align-items: center;
     justify-content: center;
     text-align: center;
 }
-.progressContainer{
+
+.progressContainer {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     text-align: center;
 }
-.progressBar{
+
+.progressBar {
     height: 8px;
     width: 30%;
     border-radius: 10px;
     background-color: #74747480;
     margin-left: 6px;
     margin-right: 6px;
+    cursor: pointer;
 }
-.progress{
+
+.progress {
     height: 8px;
     width: 0%;
     border-radius: 10px;
     background-color: #ffffff;
 }
-main{
-    width: auto;
-    height: 100%;
-}
-.controls{
+
+.controls {
     display: flex;
     align-items: center;
     text-align: center;
     justify-content: center;
 }
-.btnControls{
+
+.btnControls {
     font-size: 1.6vw;
     margin: 0.5vw 1vw 0.5vw 1vw;
-    cursor:pointer;
+    cursor: pointer;
 }
-.btnControls:hover{
+
+.btnControls:hover {
     color: #b3b3b3;
 }
-.spanTime{
+
+.spanTime {
     margin-right: 6px;
     font-family: "Nunito";
 }
-.progressContainer{
+
+.progressContainer {
     padding-bottom: 1vw;
+}
+
+.bgIcon {
+    background: linear-gradient(to bottom,  #e50073 , #ff9acd   );
+    width: 10vw;
+    height: 10vw;
+    border-radius: 10px;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    font-size: 3vw;
+    margin-right: 2vw;
+    margin-left: 1vw;
+}
+
+.bgHeader {
+    display: flex;
+    padding: 2vw;
+    font-size: 50px;
+    align-items: center;
+}
+
+.listContainer {
+    background: linear-gradient(to bottom,#1212123a, #121212ad , #121212 ,#121212 , #121212  );
+    height: 100%;
 }

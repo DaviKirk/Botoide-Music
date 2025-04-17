@@ -1,14 +1,10 @@
 [
     {
-        "name": "happy nation",
-        "uri": "static/songs/happy nation.mp3"
+        "name": "b2b",
+        "uri": "static/songs/b2b.mp3"
     },
     {
-        "name": "stars",
-        "uri": "static/songs/stars.mp3"
-    },
-    {
-        "name": "bar",
-        "uri": "static/songs/bar.mp3"
+        "name": "ja que me ensionou a beber",
+        "uri": "static/songs/ja que me ensionou a beber.mp3"
     }
 ]
