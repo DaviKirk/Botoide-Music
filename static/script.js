@@ -78,7 +78,7 @@ nextBtn.addEventListener('click', function () {
     playBtn.innerHTML = '<i class="fa-solid fa-pause"></i>';
 });
 prevBtn.addEventListener('click', function () {
-    currentSongsIndex = (currentSongsIndex - 1) % songs.length;
+    currentSongsIndex = (currentSongsIndex - 1 + songs.length) % songs.length;
     loadSong(currentSongsIndex);
     player.play();
     playBtn.innerHTML = '<i class="fa-solid fa-pause"></i>';

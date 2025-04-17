@@ -13,7 +13,7 @@ nav {
     width: 100%;
     display: flex;
     justify-content: space-between;
-    padding: 1vh 1vw 1vh 1vw;
+    padding: 1vh 0vw 1vh 0vw;
     /* position: fixed; */
 }
 
@@ -47,10 +47,6 @@ nav {
     font-size: 1vw;
     color: #b3b3b3;
 }
-.btnHome{
-    border: none;
-    background-color: #1f1f1f;
-}
 .divBtnsNavBar{
     display: flex;
     align-items: center;
@@ -63,6 +59,9 @@ nav {
     align-items: center;
     justify-content: center;
     text-align: center;
+}
+.divBtnHome:hover{
+    background-color: #4b4a4a;
 }
 footer{
     background-color: #000;
@@ -91,4 +90,29 @@ footer{
     width: 0%;
     border-radius: 10px;
     background-color: #ffffff;
+}
+main{
+    width: auto;
+    height: 100%;
+}
+.controls{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+.btnControls{
+    font-size: 1.6vw;
+    margin: 0.5vw 1vw 0.5vw 1vw;
+    cursor:pointer;
+}
+.btnControls:hover{
+    color: #b3b3b3;
+}
+.spanTime{
+    margin-right: 6px;
+    font-family: "Nunito";
+}
+.progressContainer{
+    padding-bottom: 1vw;
 }

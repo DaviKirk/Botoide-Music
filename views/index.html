@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
+<main>
     <form action="{{url_for('addsong')}}" class="form-control" method="POST">
         <label>URL:</label>
         <input type="text" name="url" class="form-control" required>
@@ -9,28 +9,6 @@
         <input type="text" name="name" class="form-control" required>
         <input type="submit" value="Cadastrar" class="btn btn-success">
     </form>
-    <p id="TESTE"></p>
-    <table class="table table-bordered table-hover">
-        <thead>
-            <tr>
-                <th>Título:</th>
-                <th>Ano:</th>
-                <th>Categoria:</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for song in songs %}
-            <tr>
-                <th><strong>{{song.name}}</strong><br></th>
-                <th>
-                    <audio controls>
-                        <source src="../{{song.uri}}" type="audio/mpeg">
-                    </audio>
-                </th>
-                <th>../{{song.uri}}</th>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+</main>
 
 {% endblock content %}

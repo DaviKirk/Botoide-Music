@@ -27,7 +27,6 @@
         </div>
         <img class="imgPerfil" src="" alt="Foto de perfil">
     </nav>
-    <h1 id="TESTE"></h1>
 
     {% block content %}
     <!-- Aqui irá o conteúdo das outras páginas -->
@@ -36,22 +35,22 @@
     <footer>
         <audio src="" id="player"></audio>
         <div class="controls">
-            <button id="prevBtn">
+            <div id="prevBtn" class="btnControls">
                 <i class="fa-solid fa-backward"></i>
-            </button>
-            <button id="playBtn">
+            </div>
+            <div id="playBtn"  class="btnControls">
                 <i class="fa-solid fa-play"></i>
-            </button>
-            <button id="nextBtn">
+            </div>
+            <div id="nextBtn"  class="btnControls">
                 <i class="fa-solid fa-forward"></i>
-            </button>
+            </div>
         </div>
-        <div class="progressContainer" >
-            <span style="margin-left: 6px;" id="currentTime">0:00</span>
+        <div class="progressContainer">
+            <span class="spanTime" id="currentTime">0:00</span>
             <div class="progressBar" id="progressBar">
                 <div class="progress"></div>
             </div>
-            <span style="margin-right: 6px;" id="duration">0:00</span>
+            <span class="spanTime" id="duration">0:00</span>
         </div>
     </footer>
 </body>
