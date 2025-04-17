@@ -27,6 +27,7 @@
         </div>
         <img class="imgPerfil" src="" alt="Foto de perfil">
     </nav>
+    <h1 id="TESTE"></h1>
 
     {% block content %}
     <!-- Aqui irá o conteúdo das outras páginas -->
@@ -45,12 +46,12 @@
                 <i class="fa-solid fa-forward"></i>
             </button>
         </div>
-        <div>
-            <div class="progressBar">
-                <span style="margin-right: 6px;" id="duration">0:00</span>
+        <div class="progressContainer" >
+            <span style="margin-left: 6px;" id="currentTime">0:00</span>
+            <div class="progressBar" id="progressBar">
                 <div class="progress"></div>
-                <span style="margin-left: 6px;" id="currentTime">0:00</span>
             </div>
+            <span style="margin-right: 6px;" id="duration">0:00</span>
         </div>
     </footer>
 </body>

@@ -71,16 +71,24 @@ footer{
     justify-content: center;
     text-align: center;
 }
-.progressBar{
+.progressContainer{
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     text-align: center;
 }
-.progress{
+.progressBar{
     height: 8px;
     width: 30%;
+    border-radius: 10px;
+    background-color: #74747480;
+    margin-left: 6px;
+    margin-right: 6px;
+}
+.progress{
+    height: 8px;
+    width: 0%;
     border-radius: 10px;
     background-color: #ffffff;
 }

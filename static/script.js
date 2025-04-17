@@ -5,7 +5,41 @@ const nextBtn = document.getElementById('nextBtn');
 const playBtn = document.getElementById('playBtn');
 const spanTotalTime = document.getElementById('duration');
 const spanCurrentTime = document.getElementById('currentTime');
-const progressBar = document.getElementById('progress');
+const progressBar = document.querySelector('.progress');
+const progressContainer = document.getElementById('progressBar');
+
+player.addEventListener('timeupdate', function () {
+
+    const duration = player.duration
+    const currentTime = player.currentTime
+
+    if (!isNaN(duration) && duration > 0) {
+
+        const percent = (currentTime / duration) * 100;
+        progressBar.style.width = percent + '%';
+
+        spanTotalTime.textContent = formatTime(duration)
+        spanCurrentTime.textContent = formatTime(currentTime)
+
+    }
+});
+
+progressContainer.addEventListener('click', function(event){
+
+    const barWidth = progressContainer.clientWidth;
+    const clickX = event.offsetX;
+    const clickPercent = clickX / barWidth;
+    const newTime = clickPercent * player.duration;
+
+    player.currentTime = newTime;
+
+});
+
+function formatTime(seconds) {
+    const minutes = Math.floor(seconds / 60);
+    const secs = Math.floor(seconds % 60);
+    return `${minutes}:${secs < 10 ? '0' : ''}${secs}`;
+}
 
 let songs = [];
 let currentSongsIndex = 0;
@@ -17,12 +51,12 @@ function loadJson() {
             songs = dados;
             loadSong(currentSongsIndex);
         })
-        .catch(function(error) {
+        .catch(function (error) {
             console.error('Erro ao carregar o JSON:', error);
         });
 };
 
-function loadSong(index){
+function loadSong(index) {
     const song = songs[index];
     player.src = song.uri;
 }
@@ -37,14 +71,20 @@ playBtn.addEventListener('click', () => {
     }
 });
 
-nextBtn.addEventListener('click', function(){
+nextBtn.addEventListener('click', function () {
     currentSongsIndex = (currentSongsIndex + 1) % songs.length;
     loadSong(currentSongsIndex);
     player.play();
     playBtn.innerHTML = '<i class="fa-solid fa-pause"></i>';
 });
-prevBtn.addEventListener('click', function(){
-    currentSongsIndex = (currentSongsIndex - 1 + songs.length) % songs.length;
+prevBtn.addEventListener('click', function () {
+    currentSongsIndex = (currentSongsIndex - 1) % songs.length;
+    loadSong(currentSongsIndex);
+    player.play();
+    playBtn.innerHTML = '<i class="fa-solid fa-pause"></i>';
+});
+player.addEventListener('ended', function () {
+    currentSongsIndex = (currentSongsIndex + 1) % songs.length;
     loadSong(currentSongsIndex);
     player.play();
     playBtn.innerHTML = '<i class="fa-solid fa-pause"></i>';
