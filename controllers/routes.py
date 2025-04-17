@@ -1,8 +1,23 @@
+#BAIXAR DEPENDENCIAS PELO POWER SHELL EXECUTADO COMO ADM:
+
+#Set-ExecutionPolicy AllSigned
+
+#Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+
+#choco install ffmpeg
+
+
 from flask import render_template, request
 import os
 import yt_dlp as youtube_dl 
 
+import json
+
 songs = []
+
+def save_songs_to_json():
+    with open('static/songs.json', 'w', encoding='utf-8') as f:
+        json.dump(songs, f, ensure_ascii=False, indent=4)
 
 def dlsong(url, name):
     os.makedirs('./songs', exist_ok=True)
@@ -38,3 +53,4 @@ def init_app(app):
             if request.form.get("url") and request.form.get("name"):
                 out = dlsong(request.form.get("url"), request.form.get("name"))
                 songs.append({"name": request.form.get("name"), "uri": out})
+                save_songs_to_json()

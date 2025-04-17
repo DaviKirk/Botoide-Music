@@ -1,32 +1,6 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+{% extends 'base.html' %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Botoide</title>
-    <link rel="stylesheet" href="/static/style.css">
-    <script src="https://kit.fontawesome.com/6d56094b7a.js" crossorigin="anonymous"></script>
-
-</head>
-
-<body>
-    <nav>
-        <img class="imgLogo" src="" alt="logo">
-        <div class="divBtnsNavBar">
-            <a style="text-decoration: none;" href="">
-                <div class="divBtnHome">
-                    <i class="iconBtnHome fa-solid fa-house"></i>
-                </div>
-            </a>
-            <div class="search-icon searchBarDiv">
-                <i class=" fa-solid fa-magnifying-glass"></i>
-                <input class="searchBarInput" type="text" name="search" id="search"
-                    placeholder="O que você quer escutar?">
-            </div>
-        </div>
-        <img class="imgPerfil" src="" alt="Foto de perfil">
-    </nav>
+{% block content %}
 
     <form action="{{url_for('addsong')}}" class="form-control" method="POST">
         <label>URL:</label>
@@ -35,6 +9,7 @@
         <input type="text" name="name" class="form-control" required>
         <input type="submit" value="Cadastrar" class="btn btn-success">
     </form>
+    <p id="TESTE"></p>
     <table class="table table-bordered table-hover">
         <thead>
             <tr>
@@ -50,7 +25,6 @@
                 <th>
                     <audio controls>
                         <source src="../{{song.uri}}" type="audio/mpeg">
-                        
                     </audio>
                 </th>
                 <th>../{{song.uri}}</th>
@@ -58,6 +32,5 @@
             {% endfor %}
         </tbody>
     </table>
-</body>
 
-</html>
+{% endblock content %}

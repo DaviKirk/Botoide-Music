@@ -1,0 +1,14 @@
+[
+    {
+        "name": "happy nation",
+        "uri": "static/songs/happy nation.mp3"
+    },
+    {
+        "name": "stars",
+        "uri": "static/songs/stars.mp3"
+    },
+    {
+        "name": "bar",
+        "uri": "static/songs/bar.mp3"
+    }
+]

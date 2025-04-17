@@ -1,11 +1,59 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Botoide</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="https://kit.fontawesome.com/6d56094b7a.js" crossorigin="anonymous"></script>
+
 </head>
+
 <body>
-    
+    <nav>
+        <img class="imgLogo" src="" alt="logo">
+        <div class="divBtnsNavBar">
+            <a style="text-decoration: none;" href="">
+                <div class="divBtnHome">
+                    <i class="iconBtnHome fa-solid fa-house"></i>
+                </div>
+            </a>
+            <div class="search-icon searchBarDiv">
+                <i class=" fa-solid fa-magnifying-glass"></i>
+                <input class="searchBarInput" type="text" name="search" id="search"
+                    placeholder="O que você quer escutar?">
+            </div>
+        </div>
+        <img class="imgPerfil" src="" alt="Foto de perfil">
+    </nav>
+
+    {% block content %}
+    <!-- Aqui irá o conteúdo das outras páginas -->
+    {% endblock content%}
+
+    <footer>
+        <audio src="" id="player"></audio>
+        <div class="controls">
+            <button id="prevBtn">
+                <i class="fa-solid fa-backward"></i>
+            </button>
+            <button id="playBtn">
+                <i class="fa-solid fa-play"></i>
+            </button>
+            <button id="nextBtn">
+                <i class="fa-solid fa-forward"></i>
+            </button>
+        </div>
+        <div>
+            <div class="progressBar">
+                <span style="margin-right: 6px;" id="duration">0:00</span>
+                <div class="progress"></div>
+                <span style="margin-left: 6px;" id="currentTime">0:00</span>
+            </div>
+        </div>
+    </footer>
 </body>
+<script src="../static/script.js"></script>
+
 </html>

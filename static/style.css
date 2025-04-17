@@ -4,7 +4,8 @@
 body {
     margin: 0;
     padding: 0;
-    display: flex;
+    height: auto;
+    width: auto;
 }
 
 nav {
@@ -13,6 +14,7 @@ nav {
     display: flex;
     justify-content: space-between;
     padding: 1vh 1vw 1vh 1vw;
+    /* position: fixed; */
 }
 
 .searchBarDiv {
@@ -61,4 +63,24 @@ nav {
     align-items: center;
     justify-content: center;
     text-align: center;
+}
+footer{
+    background-color: #000;
+    color: #fff;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.progressBar{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.progress{
+    height: 8px;
+    width: 30%;
+    border-radius: 10px;
+    background-color: #ffffff;
 }
