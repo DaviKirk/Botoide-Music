@@ -1,14 +1,14 @@
 [
     {
-        "name": "happy nation",
-        "uri": "static/songs/happy nation.mp3"
+        "name": "sign of the times",
+        "author": "harry styles",
+        "uri": "static/songs/sign of the times.mp3",
+        "url_thumb": "https://i.ytimg.com/vi_webp/oHVVoe2Vj8s/maxresdefault.webp"
     },
     {
-        "name": "stars",
-        "uri": "static/songs/stars.mp3"
-    },
-    {
-        "name": "bar",
-        "uri": "static/songs/bar.mp3"
+        "name": "falling",
+        "author": "harry styles",
+        "uri": "static/songs/falling.mp3",
+        "url_thumb": "https://i.ytimg.com/vi/olGSAVOkkTI/maxresdefault.jpg"
     }
 ]
