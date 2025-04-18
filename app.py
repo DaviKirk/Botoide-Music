@@ -9,4 +9,4 @@ routes.init_app(app)
 
 if __name__ == "__main__":
     # Roda servidor no localhost, porta 5000; 0.0.0.0 = rede LAN
-    app.run(host="localhost", port=5000, debug=True)
+    app.run(host="localhost", port=4000, debug=True)

@@ -11,15 +11,53 @@
         </div>
       </div>
       <div class="listContainer">
-        {% for author in authors %}
-        <div class="aside-element" style="background: linear-gradient(to right,  #4c008a , #e56f0000);">
-            <div style="display: flex; align-items: center; padding: 1rem; ">
-                <i class="fa-solid fa-user" style="font-size: 1.5rem; margin-right: 1rem; background: linear-gradient(to right,  #7e00e5 , #9c9aff); border-radius: 10px; padding: 10px;"></i>
-                <!-- <img id="infoThumb" class="aside-thumb" src="" alt="Song thumbnail"> -->
-                <span style="font-size: 1.2rem;">{{author.name}} - {{author.genre}} - {{author.age}} Anos</span>
+        <table style="width: 100%; border-collapse: collapse;">
+          <thead>
+            <tr style="background: linear-gradient(to right, #4c008a, #e56f0000);">
+              <th style="padding: 1rem; text-align: left;">Ícone</th>
+              <th style="padding: 1rem; text-align: left;">Nome</th>
+              <th style="padding: 1rem; text-align: left;">Gênero</th>
+              <th style="padding: 1rem; text-align: left;">Idade</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for author in authors %}
+            <tr style="background: linear-gradient(to right, #4c008a, #e56f0000);">
+              <td style="padding: 1rem;">
+                <i class="fa-solid fa-user" style="font-size: 1.5rem; background: linear-gradient(to right, #7e00e5, #9c9aff); border-radius: 10px; padding: 10px;"></i>
+              </td>
+              <td style="padding: 1rem; font-size: 1.2rem;">{{author.name}}</td>
+              <td style="padding: 1rem; font-size: 1.2rem;">{{author.genre}}</td>
+              <td style="padding: 1rem; font-size: 1.2rem;">{{author.age}} Anos</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+        <form style="background: linear-gradient(to right, #4c008a, #e56f0000); border-radius: 10px; padding: 2rem; margin-top: 2rem;" method="POST" action="/addauthor">
+          <div class="bgIcon" style="background: linear-gradient(to bottom, #7e00e5, #9c9aff); width: 5vw; height: 5vw; margin: 0 1rem 0 0;">
+            <i class="fa-solid fa-plus"></i>
+          </div>
+          <div style="width: 100%;">
+            <h2 style="color: white; font-family: 'Nunito'; margin-bottom: 1.5rem;">Adicionar Novo Artista</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem;">
+              <div style="display: flex; flex-direction: column;">
+                <label style="color: #858585; font-family: 'Nunito'; margin-bottom: 0.5rem;">Nome do Artista</label>
+                <input type="text" name="name" required style="background: #4c008a; border: none; padding: 0.8rem; border-radius: 5px; color: white; font-family: 'Nunito';">
+              </div>
+              <div style="display: flex; flex-direction: column;">
+                <label style="color: #858585; font-family: 'Nunito'; margin-bottom: 0.5rem;">Gênero Musical</label>
+                <input type="text" name="genre" required style="background: #4c008a; border: none; padding: 0.8rem; border-radius: 5px; color: white; font-family: 'Nunito';">
+              </div>
+              <div style="display: flex; flex-direction: column;">
+                <label style="color: #858585; font-family: 'Nunito'; margin-bottom: 0.5rem;">Idade</label>
+                <input type="number" name="age" required style="background: #4c008a; border: none; padding: 0.8rem; border-radius: 5px; color: white; font-family: 'Nunito';">
+              </div>
             </div>
-        </div>
-        {% endfor %}
+            <button type="submit" style="background: linear-gradient(to right, #7e00e5, #9c9aff); border: none; padding: 1rem 2rem; border-radius: 5px; color: white; font-family: 'Nunito'; margin-top: 1.5rem; cursor: pointer; font-weight: bold;">
+              Adicionar Artista
+            </button>
+          </div>
+        </form>
       </div>
     </section>
 

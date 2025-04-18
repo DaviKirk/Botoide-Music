@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<main>
+    <section class="formPageContainer">
+        <form action="{{url_for('addsong')}}" class="form-control" method="POST">
+            <div class="formAdd">
+                <p>Para baixar uma musica coloque a URL dela e o nome nos campos!</p>
+                <label>URL:</label>
+                <input type="text" name="url" class="form-control" required>
+                <label>name:</label>
+                <input type="text" name="name" class="form-control" required>
+                <input type="submit" value="Cadastrar" class="btn btn-success">
+            </div>
+        </form>
+    </section>
+</main>
+
+{% endblock content %}

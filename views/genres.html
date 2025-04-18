@@ -12,7 +12,7 @@
       </div>
       <div class="listContainer">
         {% for genre in genres %}
-        <div class="aside-element" style="background: linear-gradient(to right,  #a16227ad , #e56f0000);">
+        <div class="aside-element" style="background-color: rgba(0, 0, 0, 0);">
             <div style="display: flex; align-items: center; padding: 1rem; ">
                 <i class="fa-solid fa-compact-disc" style="font-size: 1.5rem; margin-right: 1rem; background: linear-gradient(to right,  #e56f00de , #47110049); border-radius: 10px; padding: 10px;"></i>
                 <!-- <img id="infoThumb" class="aside-thumb" src="" alt="Song thumbnail"> -->
@@ -20,6 +20,22 @@
             </div>
         </div>
         {% endfor %}
+        <form style="background: linear-gradient(to right, #e56f00de, #47110049); border-radius: 10px; padding: 2rem; margin-top: 2rem;" method="POST" action="/addgenre">
+          <div class="bgIcon" style="background: linear-gradient(to bottom, #e56f00de, #ff3c00); width: 5vw; height: 5vw; margin: 0 1rem 0 0;">
+            <i class="fa-solid fa-plus"></i>
+          </div>
+          <div style="width: 100%;">
+            <h2 style="color: white; font-family: 'Nunito'; margin-bottom: 1.5rem;">Adicionar Novo Gênero</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem;">
+              <div style="display: flex; flex-direction: column;">
+                <label style="color: #ffffff; font-family: 'Nunito'; margin-bottom: 0.5rem;">Nome do Gênero</label>
+                <input type="text" name="name" required style="background: #e56f00de; border: none; padding: 0.8rem; border-radius: 5px; color: white; font-family: 'Nunito';">
+              </div>
+            <button type="submit" style="background: linear-gradient(to right, #e56f00de, #ff3c00); border: none; padding: 1rem 2rem; border-radius: 5px; color: white; font-family: 'Nunito'; margin-top: 1.5rem; cursor: pointer; font-weight: bold;">
+              Adicionar Gênero
+            </button>
+          </div>
+        </form>
       </div>
     </section>
 

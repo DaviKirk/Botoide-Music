@@ -17,7 +17,7 @@
                     <h1>{{loop.index}}</h1>
                 </div>
                 <div>
-                    <img src="{{song.img}}" alt="">
+                    <img class="imgMusic" src="{{song.url_thumb}}" alt="">
                 </div>
                 <div>
                     <p>{{ song.name }}</p>
@@ -27,28 +27,5 @@
         </div>
     </section>
 
-    <form action="{{url_for('addsong')}}" class="form-control" method="POST">
-        <label>URL:</label>
-        <input type="text" name="url" class="form-control" required>
-        <label>name:</label>
-        <input type="text" name="name" class="form-control" required>
-        <label>author:</label>
-        <input type="text" name="author" class="form-control" required>
-        <input type="submit" value="Cadastrar" class="btn btn-success">
-    </form>
-    <form action="{{url_for('addauthor')}}" class="form-control" method="POST">
-        <label>Nome:</label>
-        <input type="text" name="name" class="form-control" required>
-        <label>Gênero:</label>
-        <input type="text" name="genre" class="form-control" required>
-        <label>Idade:</label>
-        <input type="text" name="age" class="form-control" required>
-        <input type="submit" value="Cadastrar" class="btn btn-success"> 
-    </form>
-    <form action="{{url_for('addgenre')}}" class="form-control" method="POST">
-        <label>Nome:</label>
-        <input type="text" name="name" class="form-control" required>
-        <input type="submit" value="Cadastrar" class="btn btn-success"> 
-    </form>
 
 {% endblock content %}

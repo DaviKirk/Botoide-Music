@@ -12,9 +12,8 @@
 
 <body>
     <nav>
-        <img class="imgLogo" src="" alt="logo">
         <div class="divBtnsNavBar">
-            <a style="text-decoration: none;" href="">
+            <a style="text-decoration: none;" href="/">
                 <div class="divBtnHome">
                     <i class="iconBtnHome fa-solid fa-house"></i>
                 </div>
@@ -25,70 +24,61 @@
                     placeholder="O que você quer escutar?">
             </div>
         </div>
-        <img class="imgPerfil" src="" alt="Foto de perfil">
     </nav>
     <main>
         <aside>
-            <div style="display: flex; align-items: center; margin: 20px 15px;">
-                <div style="flex-grow: 1; height: 1px; background-color: #4d4d4d;"></div>
-                <span style="margin: 0 10px; color: #858585; font-family: 'Nunito';">Músicas</span>
-                <div style="flex-grow: 1; height: 1px; background-color: #4d4d4d;"></div>
+            <div class="addMusicContainer">
+                <h3>Funcionalidades</h3>
+                <div class="aside-element-add" onclick="window.location.href='/formPage'">
+                    <i class="fa-solid fa-plus" style="margin-right: 0.4vw;"></i>
+                    <p>Add</p>
+                </div>
             </div>
             <div class="aside-element" onclick="window.location.href='/'">
                 <div style="display: flex; align-items: center; padding: 1rem;">
-                    <i class="fa-solid fa-music" style="font-size: 1.5rem; margin-right: 1rem; background: linear-gradient(to bottom,  #e50073 , #ff9acd); border-radius: 10px; padding: 10px;"></i>
+                    <i class="fa-solid fa-music"
+                        style="font-size: 1.5rem; margin-right: 1rem; background: linear-gradient(to bottom,  #e50073 , #ff9acd); border-radius: 10px; padding: 10px;"></i>
                     <!-- <img id="infoThumb" class="aside-thumb" src="" alt="Song thumbnail"> -->
                     <span style="font-size: 1.2rem;">Início</span>
                 </div>
             </div>
-            <div style="display: flex; align-items: center; margin: 20px 15px;">
-                <div style="flex-grow: 1; height: 1px; background-color: #4d4d4d;"></div>
-                <span style="margin: 0 10px; color: #858585; font-family: 'Nunito';">Artistas</span>
-                <div style="flex-grow: 1; height: 1px; background-color: #4d4d4d;"></div>
-            </div>
             <div class="aside-element" onclick="window.location.href='/getauthors'">
                 <div style="display: flex; align-items: center; padding: 1rem;">
-                    <i class="fa-solid fa-user" style="font-size: 1.5rem; margin-right: 1rem; background: linear-gradient(to bottom,  #7e00e5 , #9c9aff); border-radius: 10px; padding: 10px;"></i>
+                    <i class="fa-solid fa-user"
+                        style="font-size: 1.5rem; margin-right: 1rem; background: linear-gradient(to bottom,  #7e00e5 , #9c9aff); border-radius: 10px; padding: 10px;"></i>
                     <!-- <img id="infoThumb" class="aside-thumb" src="" alt="Song thumbnail"> -->
                     <span style="font-size: 1.2rem;">Artistas</span>
                 </div>
             </div>
-            <div style="display: flex; align-items: center; margin: 20px 15px;">
-                <div style="flex-grow: 1; height: 1px; background-color: #4d4d4d;"></div>
-                <span style="margin: 0 10px; color: #858585; font-family: 'Nunito';">Gêneros</span>
-                <div style="flex-grow: 1; height: 1px; background-color: #4d4d4d;"></div>
-            </div>
             <div class="aside-element" onclick="window.location.href='/getgenres'">
                 <div style="display: flex; align-items: center; padding: 1rem;">
-                    <i class="fa-solid fa-compact-disc" style="font-size: 1.5rem; margin-right: 1rem; background: linear-gradient(to bottom,  #e56f00de , #ff3c00); border-radius: 10px; padding: 10px;"></i>
+                    <i class="fa-solid fa-compact-disc"
+                        style="font-size: 1.5rem; margin-right: 1rem; background: linear-gradient(to bottom,  #e56f00de , #ff3c00); border-radius: 10px; padding: 10px;"></i>
                     <!-- <img id="infoThumb" class="aside-thumb" src="" alt="Song thumbnail"> -->
                     <span style="font-size: 1.2rem;">Gêneros</span>
                 </div>
             </div>
         </aside>
 
-    {% block content %}
-    <!-- Aqui irá o conteúdo das outras páginas -->
-    {% endblock content%}
+        {% block content %}
+        <!-- Aqui irá o conteúdo das outras páginas -->
+        {% endblock content%}
 
     </main>
     <footer>
         <div class="song-info-wrapper">
             <img id="currentThumb" class="song-thumb" src="" alt="Song thumbnail">
-            <div>
-                <span id="currentSongName" class="song-name"></span>
-                <span id="currentSongAuthor" class="song-author"></span>
-            </div>
+            <span id="currentSongName" class="song-name"></span>
         </div>
         <audio src="" id="player"></audio>
         <div class="controls">
             <div id="prevBtn" class="btnControls">
                 <i class="fa-solid fa-backward"></i>
             </div>
-            <div id="playBtn"  class="btnControls">
+            <div id="playBtn" class="btnControls">
                 <i class="fa-solid fa-play"></i>
             </div>
-            <div id="nextBtn"  class="btnControls">
+            <div id="nextBtn" class="btnControls">
                 <i class="fa-solid fa-forward"></i>
             </div>
         </div>

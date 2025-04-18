@@ -64,12 +64,12 @@ def init_app(app):
     @app.route("/addsong", methods=["POST"])
     def addsong():
         if request.method == "POST":
-            if request.form.get("url") and request.form.get("name") and request.form.get("author") and request.form.get("genre"):
+            if request.form.get("url") and request.form.get("name"):
                 out, url_thumb = dlsong(request.form.get("url"), request.form.get("name"))
 
                 songs.append({"name": request.form.get("name"), "author": request.form.get("author"), "uri": out, "url_thumb": url_thumb, "genre": request.form.get("genre")})
                 save_songs_to_json()
-                return home()
+        return home()
             
     @app.route("/addauthor", methods=["POST"])
     def addauthor():
@@ -84,13 +84,8 @@ def init_app(app):
             if request.form.get("name"):
                 genres.append(request.form.get("name"))
                 return getgenres()
-            
-    # @app.route("/getpage", methods=["GET"])
-    # def getpage():
-    #     # if request.args.get("author"):
-    #     #     author = request.args.get("author")
-    #     #     songs_filtered = [song for song in songs if song["author"] == author]
-    #     #     return render_template("index.html", songs=songs_filtered, author=next((a for a in authors if a["name"] == author), None))
-    #     # else:
-    #         return redirect(url_for("home"))
+    @app.route("/formPage")
+    def formPage():
+         return render_template("formPage.html")
         
+            
