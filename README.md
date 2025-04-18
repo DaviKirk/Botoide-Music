@@ -4,10 +4,10 @@
 <h3>Abrir poweShell executando como ADM e colar os seguintes comandos</h3>
 
 <h2>Primeiro comando:</h2>
-Set-ExecutionPolicy AllSigned
+<p>Set-ExecutionPolicy AllSigned</p>
 
 <h2>Segundo comando:</h2>
-Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+<p>Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))</p>
 
 <h2>Terceiro comando:</h2>
-choco install ffmpeg
+<p>choco install ffmpeg</p>
