@@ -3,6 +3,8 @@ const player = document.getElementById('player');
 const prevBtn = document.getElementById('prevBtn');
 const nextBtn = document.getElementById('nextBtn');
 const playBtn = document.getElementById('playBtn');
+const currentSongName = document.getElementById('currentSongName');
+const currentThumb = document.getElementById('currentThumb');
 const spanTotalTime = document.getElementById('duration');
 const spanCurrentTime = document.getElementById('currentTime');
 const progressBar = document.querySelector('.progress');
@@ -59,6 +61,9 @@ function loadJson() {
 function loadSong(index) {
     const song = songs[index];
     player.src = song.uri;
+    currentSongName.textContent = song.name;
+    currentThumb.src = song.url_thumb;
+    currentSongAuthor.textContent = song.author;
 }
 
 playBtn.addEventListener('click', () => {

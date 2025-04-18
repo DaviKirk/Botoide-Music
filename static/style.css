@@ -165,6 +165,46 @@ footer {
     padding-bottom: 1vw;
 }
 
+.song-info-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 1vh 2vw;
+    margin-top: 3vw;
+    margin-bottom: -4vw;
+}
+
+.song-thumb {
+    width: 110px;
+    height: 110px;
+    border-radius: 4px;
+    object-fit: cover;
+    margin-right: 12px;
+    margin-top: 8px;
+}
+
+.song-name {
+    font-family: "Nunito";
+    font-size: 1.5rem;
+    color: #ffffff;
+    text-transform: capitalize;
+    margin-bottom: 10px;
+    display: block;
+}
+.song-author {
+    font-family: "Nunito";
+    font-size: 1rem;
+    color: #858585;
+    text-transform: capitalize;
+    margin-top: -8px;
+    display: block;
+}
+.song-info-wrapper div{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
 .bgIcon {
     background: linear-gradient(to bottom,  #e50073 , #ff9acd   );
     width: 10vw;
@@ -189,9 +229,4 @@ footer {
 .listContainer {
     background: linear-gradient(to bottom,#1212123a, #121212ad , #121212 ,#121212 , #121212  );
     height: 100%;
-}
-.musicList{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
 }

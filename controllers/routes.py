@@ -6,11 +6,9 @@
 
 #choco install ffmpeg
 
-
-from flask import render_template, request
+from flask import redirect, render_template, request, url_for
 import os
 import yt_dlp as youtube_dl 
-
 import json
 
 songs = []
@@ -25,6 +23,12 @@ def dlsong(url, name):
     # Remove a extensão no caso do usuario adicionar
     base_filename = os.path.splitext(name)[0]
 
+    # First extract info to get thumbnail URL
+    with youtube_dl.YoutubeDL({'quiet': True}) as ydl:
+        info = ydl.extract_info(url, download=False)
+        url_thumb = info.get('thumbnail', '')
+
+    # Then download and process the audio
     ydl_opts = {
         'format': 'bestaudio/best',
         'outtmpl': f'static/songs/{base_filename}.%(ext)s',
@@ -37,8 +41,8 @@ def dlsong(url, name):
     }
     with youtube_dl.YoutubeDL(ydl_opts) as ydl:
         ydl.download([url])
-
-    return f'static/songs/{base_filename}.mp3'
+    
+    return f'static/songs/{base_filename}.mp3', url_thumb
 
 def init_app(app):
     # Rota principal do site
@@ -50,7 +54,8 @@ def init_app(app):
     @app.route("/addsong", methods=["POST"])
     def addsong():
         if request.method == "POST":
-            if request.form.get("url") and request.form.get("name"):
-                out = dlsong(request.form.get("url"), request.form.get("name"))
-                songs.append({"name": request.form.get("name"), "uri": out})
+            if request.form.get("url") and request.form.get("name") and request.form.get("author"):
+                out, url_thumb = dlsong(request.form.get("url"), request.form.get("name"))
+                songs.append({"name": request.form.get("name"), "author": request.form.get("author"), "uri": out, "url_thumb": url_thumb})
                 save_songs_to_json()
+                return redirect(url_for("home"))

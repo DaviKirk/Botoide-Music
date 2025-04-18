@@ -33,6 +33,13 @@
     {% endblock content%}
 
     <footer>
+        <div class="song-info-wrapper">
+            <img id="currentThumb" class="song-thumb" src="" alt="Song thumbnail">
+            <div>
+                <span id="currentSongName" class="song-name"></span>
+                <span id="currentSongAuthor" class="song-author"></span>
+            </div>
+        </div>
         <audio src="" id="player"></audio>
         <div class="controls">
             <div id="prevBtn" class="btnControls">
