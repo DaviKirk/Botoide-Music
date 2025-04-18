@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <section style="background: linear-gradient(to bottom, #7e00e5, #3c2056);">
+      <div class="bgHeader">
+        <div class="bgIcon" style="background: linear-gradient(to bottom,  #7e00e5 , #9c9aff);"">
+            <i class="fa-solid fa-user"></i>
+        </div>
+        <div>
+            <h1>Meus Artistas</h1>
+        </div>
+      </div>
+      <div class="listContainer">
+        {% for author in authors %}
+        <div class="aside-element" style="background: linear-gradient(to right,  #4c008a , #e56f0000);">
+            <div style="display: flex; align-items: center; padding: 1rem; ">
+                <i class="fa-solid fa-user" style="font-size: 1.5rem; margin-right: 1rem; background: linear-gradient(to right,  #7e00e5 , #9c9aff); border-radius: 10px; padding: 10px;"></i>
+                <!-- <img id="infoThumb" class="aside-thumb" src="" alt="Song thumbnail"> -->
+                <span style="font-size: 1.2rem;">{{author.name}} - {{author.genre}} - {{author.age}} Anos</span>
+            </div>
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+
+{% endblock content %}

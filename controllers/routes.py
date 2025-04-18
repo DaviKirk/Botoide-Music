@@ -12,6 +12,8 @@ import yt_dlp as youtube_dl
 import json
 
 songs = []
+authors = []
+genres = []
 
 def save_songs_to_json():
     with open('static/songs.json', 'w', encoding='utf-8') as f:
@@ -51,11 +53,44 @@ def init_app(app):
     def home():
         return render_template("index.html", songs=songs)
     
+    @app.route("/getauthors", methods=["GET"])
+    def getauthors():
+        return render_template("artists.html", authors=authors)
+    
+    @app.route("/getgenres", methods=["GET"])
+    def getgenres():
+        return render_template("genres.html", genres=genres)
+    
     @app.route("/addsong", methods=["POST"])
     def addsong():
         if request.method == "POST":
-            if request.form.get("url") and request.form.get("name") and request.form.get("author"):
+            if request.form.get("url") and request.form.get("name") and request.form.get("author") and request.form.get("genre"):
                 out, url_thumb = dlsong(request.form.get("url"), request.form.get("name"))
-                songs.append({"name": request.form.get("name"), "author": request.form.get("author"), "uri": out, "url_thumb": url_thumb})
+
+                songs.append({"name": request.form.get("name"), "author": request.form.get("author"), "uri": out, "url_thumb": url_thumb, "genre": request.form.get("genre")})
                 save_songs_to_json()
-                return redirect(url_for("home"))
+                return home()
+            
+    @app.route("/addauthor", methods=["POST"])
+    def addauthor():
+        if request.method == "POST":
+            if request.form.get("name") and request.form.get("genre") and request.form.get("age"):
+                authors.append({"name": request.form.get("name"), "genre": request.form.get("genre"), "age": request.form.get("age")})
+                return getauthors()
+            
+    @app.route("/addgenre", methods=["POST"])
+    def addgenre():
+        if request.method == "POST":
+            if request.form.get("name"):
+                genres.append(request.form.get("name"))
+                return getgenres()
+            
+    # @app.route("/getpage", methods=["GET"])
+    # def getpage():
+    #     # if request.args.get("author"):
+    #     #     author = request.args.get("author")
+    #     #     songs_filtered = [song for song in songs if song["author"] == author]
+    #     #     return render_template("index.html", songs=songs_filtered, author=next((a for a in authors if a["name"] == author), None))
+    #     # else:
+    #         return redirect(url_for("home"))
+        
