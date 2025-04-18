@@ -1,10 +1,6 @@
 [
     {
-        "name": "b2b",
-        "uri": "static/songs/b2b.mp3"
-    },
-    {
-        "name": "ja que me ensionou a beber",
-        "uri": "static/songs/ja que me ensionou a beber.mp3"
+        "name": "pisadinha",
+        "uri": "static/songs/pisadinha.mp3"
     }
 ]

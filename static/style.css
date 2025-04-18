@@ -190,3 +190,8 @@ footer {
     background: linear-gradient(to bottom,#1212123a, #121212ad , #121212 ,#121212 , #121212  );
     height: 100%;
 }
+.musicList{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}

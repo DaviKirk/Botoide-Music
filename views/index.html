@@ -12,17 +12,29 @@
         </form>
     </aside>
     <section>
-      <div class="bgHeader">
-        <div class="bgIcon">
-            <i class="fa-solid fa-music"></i>
+        <div class="bgHeader">
+            <div class="bgIcon">
+                <i class="fa-solid fa-music"></i>
+            </div>
+            <div>
+                <h1>Minhas Músicas</h1>
+            </div>
         </div>
-        <div>
-            <h1>Minhas Músicas</h1>
+        <div class="listContainer">
+            {% for song in songs%}
+            <div class="musicList">
+                <div>
+                    <h1>{{loop.index}}</h1>
+                </div>
+                <div>
+                    <img src="{{song.img}}" alt="">
+                </div>
+                <div>
+                    <p>{{ song.name }}</p>
+                </div>
+            </div>
+            {% endfor %}
         </div>
-      </div>
-      <div class="listContainer">
-        
-      </div>
     </section>
 </main>
 
