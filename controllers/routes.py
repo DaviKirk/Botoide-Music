@@ -67,7 +67,7 @@ def init_app(app):
             if request.form.get("url") and request.form.get("name"):
                 out, url_thumb = dlsong(request.form.get("url"), request.form.get("name"))
 
-                songs.append({"name": request.form.get("name"), "author": request.form.get("author"), "uri": out, "url_thumb": url_thumb, "genre": request.form.get("genre")})
+                songs.append({"name": request.form.get("name"), "author": request.form.get("author"), "uri": out, "url_thumb": url_thumb})
                 save_songs_to_json()
         return home()
             

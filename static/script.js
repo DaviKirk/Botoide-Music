@@ -63,6 +63,7 @@ function loadSong(index) {
     player.src = song.uri;
     currentSongName.textContent = song.name;
     currentThumb.src = song.url_thumb;
+    currentSongAuthor.textContent = song.author;
 }
 
 playBtn.addEventListener('click', () => {
