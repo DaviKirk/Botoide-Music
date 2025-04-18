@@ -27,11 +27,51 @@
         </div>
         <img class="imgPerfil" src="" alt="Foto de perfil">
     </nav>
+    <main>
+        <aside>
+            <div style="display: flex; align-items: center; margin: 20px 15px;">
+                <div style="flex-grow: 1; height: 1px; background-color: #4d4d4d;"></div>
+                <span style="margin: 0 10px; color: #858585; font-family: 'Nunito';">Músicas</span>
+                <div style="flex-grow: 1; height: 1px; background-color: #4d4d4d;"></div>
+            </div>
+            <div class="aside-element" onclick="window.location.href='/'">
+                <div style="display: flex; align-items: center; padding: 1rem;">
+                    <i class="fa-solid fa-music" style="font-size: 1.5rem; margin-right: 1rem; background: linear-gradient(to bottom,  #e50073 , #ff9acd); border-radius: 10px; padding: 10px;"></i>
+                    <!-- <img id="infoThumb" class="aside-thumb" src="" alt="Song thumbnail"> -->
+                    <span style="font-size: 1.2rem;">Início</span>
+                </div>
+            </div>
+            <div style="display: flex; align-items: center; margin: 20px 15px;">
+                <div style="flex-grow: 1; height: 1px; background-color: #4d4d4d;"></div>
+                <span style="margin: 0 10px; color: #858585; font-family: 'Nunito';">Artistas</span>
+                <div style="flex-grow: 1; height: 1px; background-color: #4d4d4d;"></div>
+            </div>
+            <div class="aside-element" onclick="window.location.href='/getauthors'">
+                <div style="display: flex; align-items: center; padding: 1rem;">
+                    <i class="fa-solid fa-user" style="font-size: 1.5rem; margin-right: 1rem; background: linear-gradient(to bottom,  #7e00e5 , #9c9aff); border-radius: 10px; padding: 10px;"></i>
+                    <!-- <img id="infoThumb" class="aside-thumb" src="" alt="Song thumbnail"> -->
+                    <span style="font-size: 1.2rem;">Artistas</span>
+                </div>
+            </div>
+            <div style="display: flex; align-items: center; margin: 20px 15px;">
+                <div style="flex-grow: 1; height: 1px; background-color: #4d4d4d;"></div>
+                <span style="margin: 0 10px; color: #858585; font-family: 'Nunito';">Gêneros</span>
+                <div style="flex-grow: 1; height: 1px; background-color: #4d4d4d;"></div>
+            </div>
+            <div class="aside-element" onclick="window.location.href='/getgenres'">
+                <div style="display: flex; align-items: center; padding: 1rem;">
+                    <i class="fa-solid fa-compact-disc" style="font-size: 1.5rem; margin-right: 1rem; background: linear-gradient(to bottom,  #e56f00de , #ff3c00); border-radius: 10px; padding: 10px;"></i>
+                    <!-- <img id="infoThumb" class="aside-thumb" src="" alt="Song thumbnail"> -->
+                    <span style="font-size: 1.2rem;">Gêneros</span>
+                </div>
+            </div>
+        </aside>
 
     {% block content %}
     <!-- Aqui irá o conteúdo das outras páginas -->
     {% endblock content%}
 
+    </main>
     <footer>
         <div class="song-info-wrapper">
             <img id="currentThumb" class="song-thumb" src="" alt="Song thumbnail">

@@ -34,7 +34,7 @@ main {
     flex-direction: row;
     /* height: 100%; */
     flex: 1 1 auto;
-    overflow-y: auto;
+    overflow-y: hidden;
     background-color: #000000;
     border-radius: 20px;
 }
@@ -45,6 +45,27 @@ aside {
     height: 100%;
     width: 20%;
     border-radius: 20px;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    /* Styling the scrollbar */
+    &::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: #121212;
+        border-radius: 4px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: #4d4d4d;
+        border-radius: 4px;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+        background: #666666;
+    }
 }
 
 section {
@@ -229,4 +250,21 @@ footer {
 .listContainer {
     background: linear-gradient(to bottom,#1212123a, #121212ad , #121212 ,#121212 , #121212  );
     height: 100%;
+    overflow-y: auto;
+}
+
+.aside-element {
+    background-color: #2c2c2c;
+    margin: 15px;
+    width: 90%;
+    border-radius: 20px;
+    cursor: pointer;
+    
+}
+
+.aside-thumb {
+    width: 40px;
+    height: 40px;
+    border-radius: 4px;
+    object-fit: cover;
 }

@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <section style="background: linear-gradient(to bottom, #e56f00de, #563a20);">
+      <div class="bgHeader">
+        <div class="bgIcon" style="background: linear-gradient(to bottom,  #e56f00de , #ff3c00);">
+            <i class="fa-solid fa-compact-disc"></i>
+        </div>
+        <div>
+            <h1>Meus Gêneros</h1>
+        </div>
+      </div>
+      <div class="listContainer">
+        {% for genre in genres %}
+        <div class="aside-element" style="background: linear-gradient(to right,  #a16227ad , #e56f0000);">
+            <div style="display: flex; align-items: center; padding: 1rem; ">
+                <i class="fa-solid fa-compact-disc" style="font-size: 1.5rem; margin-right: 1rem; background: linear-gradient(to right,  #e56f00de , #47110049); border-radius: 10px; padding: 10px;"></i>
+                <!-- <img id="infoThumb" class="aside-thumb" src="" alt="Song thumbnail"> -->
+                <span style="font-size: 1.2rem;">{{genre}}</span>
+            </div>
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+
+{% endblock content %}
